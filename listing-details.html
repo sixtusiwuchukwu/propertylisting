@@ -64,9 +64,9 @@ About Us
 <li class="nav-item">
 <a href="listings.html" class="nav-link active">
 Listings
-<i class="ri-add-line"></i>
+<!-- <i class="ri-add-line"></i> -->
 </a>
-<ul class="dropdown-menu">
+<!-- <ul class="dropdown-menu">
 <li class="nav-item">
 <a href="listings.html" class="nav-link">Rent Apartment Listing
 </a>
@@ -76,7 +76,7 @@ Listings
 </a>
 </li>
 
-</ul>
+</ul> -->
 </li>
 
 
@@ -144,7 +144,7 @@ Listings
 </div>
 <div class="property-img">
 <img src="assets/img/property/single-property-1.jpg" alt="Image">
-<span class="property-status">For Rent</span>
+<span class="property-status">For Sale</span>
 </div>
 <div class="property-desc">
 <h4>Description</h4>
@@ -170,7 +170,7 @@ Listings
 </div>
 <div class="col-md-4">
 <ul class="property-features list-style">
-<li>Property Status : <span>For Rent</span></li>
+<li>Property Status : <span>For Sale</span></li>
 <li>Bedrooms ID : <span>10</span></li>
 <li>Year Built : <span>14/02/22</span></li>
 </ul>
@@ -221,9 +221,9 @@ Listings
 </div>
 
 
-<div class="property-desc">
+<div class="property-desc ">
 <h4>Similar Property</h4>
-<div class="row">
+<div class="row similar">
 <div class="col-lg-6 col-md-6">
 <div class="property-card style2">
 <div class="property-img-slider owl-carousel">
@@ -233,7 +233,7 @@ Listings
 </div>
 <div class="property-info">
 <div class="property-status-wrap">
-<span class="property-status">For Rent</span>
+<span class="property-status">For Sale</span>
 <p class="property-price">C$34,900/<span>annual</span></p>
 </div>
 <h3><a href="listing-details.html">Villa In Luis Park</a></h3>
@@ -306,8 +306,8 @@ Listings
 <textarea name="booking_msg" id="booking_msg" cols="30" rows="10" placeholder="Your Message"></textarea>
 </div>
 <div class="form-group">
-<button class="btn style2">Request Booking</button>
-</div>
+    <button class="btn style2" onclick="requestBooking(this)">Request Booking</button>
+  </div>
 </form>
 </div>
 
@@ -357,7 +357,7 @@ Listings
     <img src="assets/img/blog/post-thumb-3.jpg" alt="Image">
     </div>
     <div class="property-thumb-info">
-    <h6><a href="listing-details.html">Ready Flat For Rent</a></h6>
+    <h6><a href="listing-details.html">Ready Flat For Sale</a></h6>
     <p>C$14,000 <span>/annual</span></p>
     </div>
     </div>
@@ -679,6 +679,8 @@ Register Now
 <script src="assets/js/fslightbox.js"></script>
 <script src="assets/js/tweenmax.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="scripts/houseDetails.js"></script>
 </body>
 
 
