@@ -14,7 +14,7 @@ const getListings = async (page = 1) => {
     const propertyCardsContainer = document.querySelector(".listing");
     const totalText = document.querySelector(".total-result");
   // propertyCardsContainer.innerHTML = ""
-  totalText.textContent = `${response.data.total_houses } Results Found`
+  totalText !==  null && (totalText.textContent = `${response.data.total_houses } Results Found`)
     CreateHouse(listings, propertyCardsContainer);
   } catch (error) {
     console.error(error);
@@ -211,8 +211,9 @@ window.onload = function () {
   getListings();
 
   const filterButton = document.querySelector(".btn-filter");
+  console.log(filterButton,"filterButton")
 
-  filterButton.addEventListener("click", (event) => {
+  filterButton !==  filterButton.addEventListener("click", (event) => {
     event.preventDefault();
     filterHouses();
   });
