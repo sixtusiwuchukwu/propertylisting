@@ -67,7 +67,7 @@ const CreateHouse = (listings = [], propertyCardsContainer) => {
     price.classList.add("property-price");
     price.textContent = `C$ ${listing?.propertyDetails?.price.toLocaleString()}`;
 
-    price.innerHTML += "/<span>annual</span>";
+    // price.innerHTML += "/<span>annual</span>";
 
     statusWrap.appendChild(price);
     propertyInfo.appendChild(statusWrap);
@@ -148,38 +148,22 @@ const CreateHouse = (listings = [], propertyCardsContainer) => {
 };
 
 async function filterHouses() {
-  // const {start:min_distance,end:max_distance} = getRange(document.getElementById("amount_one").value);
-  const keywords = document.getElementById("keywords").value;
-  const category = document.getElementById("category").value;
-  const region = document.getElementById("region").value;
+ 
+  
   const city = document.getElementById("city").value;
-  const type = document.getElementById("type").value;
-  const location = document.getElementById("location").value;
-  const min_rooms = 1;
-  const max_rooms = Number(document.getElementById("rooms").value) || 1;
-  const min_baths = 1;
-  const max_baths = Number(document.getElementById("bath").value) || 1;
-  const { start: min_price, end: max_price } = getRange(
-    document.getElementById("price_range").value
-  );
+
+  const max_rooms = Number(document.getElementById("rooms").value);
+  const max_baths = Number(document.getElementById("bath").value);
+ 
 
   let response = await axios.get("http://127.0.0.1:5000/houses/filter", {
     params: {
       page: 1,
       per_page: 7,
-      keywords,
-      category,
-      region,
-      min_baths,
-      max_baths,
+      bathrooms: max_baths,
       city,
-      min_rooms,
-      max_rooms,
-      // min_distance, max_distance,
-      type,
-      location,
-      min_price,
-      max_price,
+      bedrooms: max_rooms,
+     
     },
   });
   const propertyCardsContainer = document.querySelector(".filter-response");

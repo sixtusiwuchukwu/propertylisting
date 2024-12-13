@@ -15,7 +15,7 @@ const getHouseInfo = async () => {
   
       // Populate the price
       propertyDetailsContainer.querySelector('.property-price').textContent =`C$ ${ houseData?.propertyDetails?.price.toLocaleString()}`;
-      propertyDetailsContainer.querySelector('.property-price').innerHTML += "/<span>annual</span>"; 
+      // propertyDetailsContainer.querySelector('.property-price').innerHTML += "/<span>annual</span>"; 
 
   
       // Image
@@ -118,7 +118,7 @@ const getSimilarHouse = async () => {
   
         const title = document.createElement('h3');
         const titleLink = document.createElement('a');
-        titleLink.href = `listing-details.html?id=${house.propertyDetails.propertyId}`; // Dynamic URL with propertyId
+        titleLink.href = `listing-details.html?query=${house.propertyDetails.propertyId}`; // Dynamic URL with propertyId
         titleLink.textContent = house.title; 
         title.appendChild(titleLink);
         propertyInfo.appendChild(title);
